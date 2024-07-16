@@ -38,13 +38,14 @@ def main():
                 botao.pack()
             root.mainloop()
             pin=resultado
-            tabuleiro.atualizar_tabuleiro()
             pinA=pinos[jogador][pin]
             pinA.andar()
             verifica_emcima(jogador,pinA,jogadoresdic,pinos)
             posicoespinos[jogador]=jogadoresdic[jogador].pinos
             listaposicoes+=[posicoespinos[jogador]]
-    
+            mover_pino_graficamente(jogador, pinA)
+            tabuleiro.atualizar_tabuleiro()
+            
     messagebox.showinfo("Vencedor", "Parabéns Você Ganhou o Jogo!!!")
     root.mainloop()
     root.quit()
