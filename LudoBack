@@ -1,5 +1,4 @@
 import numpy as np
-import pandas as pd
 
 class Jogador:
     def __init__(self,cor : str,nome : str =None):
@@ -15,28 +14,6 @@ class Jogador:
         self.pino1=Pino(self,self.cor,1,self.start)
         self.pino2=Pino(self,self.cor,2,self.start)
         self.pino3=Pino(self,self.cor,3,self.start)
-    
-    def arcoiris(self):
-        if self.cor=='Vermelho':
-            self.casas=(0,1,2,3)
-            self.start=16
-            tab=np.array([i for i in range(16,75)])
-            self.tabuleiro = np.delete(tab,np.where(tab==67)[0][0])
-        elif self.cor=='Azul':
-            self.casas=(4,5,6,7)
-            self.start=55
-            self.tabuleiro=np.array([i for i in range(55,68)]+[i for i in range(16,54)]
-                                    +[i for i in range(75,81)]+[74])
-        elif self.nome=='Verde':
-            self.casas=(12,13,14,15)
-            self.start=29
-            self.tabuleiro=np.array([i for i in range(29,68)]+[i for i in range(16,28)]
-                                    +[i for i in range(87,93)]+[74])
-        else:
-            self.casas=(8,9,10,11)
-            self.start=42
-            self.tabuleiro=np.array([i for i in range(42,68)]+[i for i in range(16,41)]
-                                    +[i for i in range(81,87)]+[74])
     
 class Pino:
     def __init__(self,jogador : Jogador,cor,numero : int,posição : int,fora : bool=False):
@@ -88,31 +65,31 @@ def verifica_emcima(jogadora,pinA,jogadoresdic,pinos):
 class Vermelho(Jogador):
     def __init__(self,nome=None,cor='Vermelho'):
         super().__init__(cor,nome)
-        self.casas=(0,1,2,3)
-        self.start=16
-        self.tabuleiro=np.delete(np.array([i for i in range(16,75)]),67)
-        
-class Azul(Jogador):
-    def __init__(self,nome=None,cor='Azul'):
-        super().__init__(cor,nome)
-        self.casas=(4,5,6,7)
-        self.start=55
-        self.tabuleiro=np.array([i for i in range(55,68)]+[i for i in range(16,54)]
-                                +[i for i in range(75,81)]+[74])
-
-class Verde(Jogador):
-    def __init__(self,nome=None,cor='Verde'):
-        super().__init__(cor,nome)
         self.casas=(12,13,14,15)
         self.start=29
         self.tabuleiro=np.array([i for i in range(29,68)]+[i for i in range(16,28)]
                                 +[i for i in range(87,93)]+[74])
+        
+class Azul(Jogador):
+    def __init__(self,nome=None,cor='Azul'):
+        super().__init__(cor,nome)
+        self.casas=(0,1,2,3)
+        self.start=16
+        self.tabuleiro=np.delete(np.array([i for i in range(16,75)]),67)
 
-
-class Amarelo(Jogador):
-    def __init__(self,nome=None,cor='Amarelo'):
+class Verde(Jogador):
+    def __init__(self,nome=None,cor='Verde'):
         super().__init__(cor,nome)
         self.casas=(8,9,10,11)
         self.start=42
         self.tabuleiro=np.array([i for i in range(42,68)]+[i for i in range(16,41)]
                                 +[i for i in range(81,87)]+[74])
+
+
+class Amarelo(Jogador):
+    def __init__(self,nome=None,cor='Amarelo'):
+        super().__init__(cor,nome)
+        self.casas=(4,5,6,7)
+        self.start=55
+        self.tabuleiro=np.array([i for i in range(55,68)]+[i for i in range(16,54)]
+                                +[i for i in range(75,81)]+[74])
