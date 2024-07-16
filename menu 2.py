@@ -15,7 +15,7 @@ class Menu:
         self.novojogo_instancia.set_cores_instancia(self.cores_instancia)
         
         bot_novojogo = tk.Button(self.frame, text='Novo Jogo', command=self.novojogo, width=20, height=2)
-        bot_continuar = tk.Button(self.frame, text='Continuar Jogo', command=self.continuar, width=20, height=2)
+        #bot_continuar = tk.Button(self.frame, text='Continuar Jogo', command=self.continuar, width=20, height=2)
         bot_sair = tk.Button(self.frame, text='Sair', command=self.sair, width=20, height=2)
         
         bot_novojogo.pack(pady=20)
@@ -26,8 +26,8 @@ class Menu:
         self.frame.pack_forget()  
         self.novojogo_instancia.frame.pack(expand=True)  
         
-    def continuar(self):
-        messagebox.showinfo("Continuar Jogo", "Continuando o jogo...")
+    #def continuar(self):
+       # messagebox.showinfo("Continuar Jogo", "Continuando o jogo...")
         
     def sair(self):
         self.master.quit()
