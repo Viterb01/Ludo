@@ -7,9 +7,12 @@ def main():
     root=tk.Tk()
     menu=Menu(root)
     root.mainloop()
+
     
     jogadoresdic=menu.cores.iniciar_jogo()
-   
+    root.quite()
+
+    root=tk.Tk()
     tabuleiro = LudoTabuleiro(root)
     
     
@@ -43,6 +46,7 @@ def main():
             listaposicoes+=[posicoespinos[jogador]]
     
     messagebox.showinfo("Vencedor", "Parabéns Você Ganhou o Jogo!!!")
+    root.mainloop()
     root.quit()
     
 main()
