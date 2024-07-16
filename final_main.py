@@ -9,7 +9,7 @@ def main():
     root.mainloop()
 
     
-    jogadoresdic=menu.cores.iniciar_jogo()
+    jogadoresdic=menu.cores_instancia.iniciar_jogo()
     root.quite()
 
     root=tk.Tk()
