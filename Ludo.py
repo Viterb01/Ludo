@@ -61,7 +61,7 @@ class Pino:
             self.fora=True
             self.posicao=self.jogador.start
 
-def verifica_emcima(jogadora,pinA,jogadoresdic,pinos):
+def verifica_em_cima(jogadora,pinA,jogadoresdic,pinos):
     'verifica se o pino atual comeu o pino de outro jogador que esteja fora das casas seguras'
     for jogadorb in jogadoresdic:
         seguro=(jogadorb.start,)+(24,37,50,63,74)
