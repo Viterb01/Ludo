@@ -46,6 +46,7 @@ class Pino:
             novo_indice=indice_atual+casas
             self.posicao=jogador.tabuleiro[novo_indice]
             jogador.pinos[self.numero]=self.posicao
+            return casas
         
     def morreu(self):
         'caso o pino seja comido por outro devolve ele ao curral'
