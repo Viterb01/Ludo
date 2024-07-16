@@ -70,22 +70,22 @@ class LudoTabuleiro:
                 self.canvas.create_rectangle(92 + j * 42 + i * 336, 344, 134 + j * 42 + i * 336, 386, fill=cor, outline='black')
                 
     
-    def desenhar_pinos(self):
+    #def desenhar_pinos(self):
         # Posições iniciais dos pinos de cada jogador
-        posicoes = {
-            'Vermelho': [vermelho.pino0.coordenada(), vermelho.pino1.coordenada(), vermelho.pino2.coordenada(), vermelho.pino3.coordenada()],
-            'Verde': [verde.pino0.coordenada(), verde.pino1.coordenada(), verde.pino2.coordenada(), verde.pino3.coordenada()],
-            'Azul': [azul.pino0.coordenada(), azul.pino1.coordenada(), azul.pino2.coordenada(), azul.pino3.coordenada()],
-            'Amarelo': [amarelo.pino0.coordenada(), amarelo.pino1.coordenada(), amarelo.pino2.coordenada(), amarelo.pino3.coordenada()]
-                }
+       # posicoes = {
+           # 'Vermelho': [vermelho.pino0.coordenada(), vermelho.pino1.coordenada(), vermelho.pino2.coordenada(), vermelho.pino3.coordenada()],
+          #  'Verde': [verde.pino0.coordenada(), verde.pino1.coordenada(), verde.pino2.coordenada(), verde.pino3.coordenada()],
+           # 'Azul': [azul.pino0.coordenada(), azul.pino1.coordenada(), azul.pino2.coordenada(), azul.pino3.coordenada()],
+        #    'Amarelo': [amarelo.pino0.coordenada(), amarelo.pino1.coordenada(), amarelo.pino2.coordenada(), amarelo.pino3.coordenada()]
+           #     }
 
         # Desenha os pinos de cada jogador nas posições iniciais
-        for jogador, posicoes_iniciais in posicoes.items():
-            cor = self.cores_jogadores[jogador]
-            for x, y in posicoes_iniciais:
-                x1, y1 = 13 + x * 42, 13 + y * 42
-                x2, y2 = x1 + 30, y1 + 30
-                self.canvas.create_oval(x1, y1, x2, y2, outline='black', fill=cor)
+      #  for jogador, posicoes_iniciais in posicoes.items():
+        #    cor = self.cores_jogadores[jogador]
+          #  for x, y in posicoes_iniciais:
+             #   x1, y1 = 13 + x * 42, 13 + y * 42
+              #  x2, y2 = x1 + 30, y1 + 30
+              #  self.canvas.create_oval(x1, y1, x2, y2, outline='black', fill=cor)
 
     def mover_pino_graficamente(self, jogador, pinA):
         casas = {
